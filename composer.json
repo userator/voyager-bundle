@@ -30,10 +30,4 @@
         "psr-4": {
             "Userator\\VoyagerBundle\\Tests\\": "tests/"
         }
-    },
-    "config": {
-        "platform": {
-            "php": "7.4"
-        }
     }
-}
