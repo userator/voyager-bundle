@@ -1,0 +1,23 @@
+parameters:
+  userator_voyager.enabled: true
+  userator_voyager.title: 'GraphQL Voyager'
+  userator_voyager.asset_package: 'voyager'
+
+services:
+  _defaults:
+    public: true
+    autowire: true
+    autoconfigure: true
+
+  Userator\VoyagerBundle\:
+    resource: '../../../src'
+    exclude:
+      - '../../../src/DependencyInjection'
+
+  Userator\VoyagerBundle\Action\VoyagerAction:
+    arguments:
+      - '@twig'
+      - '@router'
+      - '%userator_voyager.enabled%'
+      - '%userator_voyager.title%'
+      - '%userator_voyager.asset_package%'

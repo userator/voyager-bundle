@@ -1,0 +1,39 @@
+{
+    "name": "userator/voyager-bundle",
+    "description": "graphql voyager bundle",
+    "minimum-stability": "stable",
+    "license": "proprietary",
+    "type": "symfony-bundle",
+    "authors": [
+        {
+            "name": "userator",
+            "email": "userator@ya.ru"
+        }
+    ],
+    "require": {
+        "php": "^7.4",
+        "symfony/http-kernel": "^5.4",
+        "symfony/dependency-injection": "^5.4",
+        "symfony/config": "^5.4",
+        "twig/twig": "^3.4"
+    },
+    "require-dev": {
+        "roave/security-advisories": "dev-latest",
+        "phpunit/phpunit": "^9.5"
+    },
+    "autoload": {
+        "psr-4": {
+            "Userator\\VoyagerBundle\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Userator\\VoyagerBundle\\Tests\\": "tests/"
+        }
+    },
+    "config": {
+        "platform": {
+            "php": "7.4"
+        }
+    }
+}

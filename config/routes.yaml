@@ -1,0 +1,4 @@
+userator_voyager_graphql:
+  path: /graphql/voyager
+  methods: GET
+  controler: Userator\VoyagerBundle\Action\VoyagerAction
