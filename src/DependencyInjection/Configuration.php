@@ -1,6 +1,8 @@
 <?php
 
-namespace DependencyInjection;
+declare(strict_types=1);
+
+namespace Userator\VoyagerBundle\DependencyInjection;
 
 use Symfony\Component\Config\Definition\Builder\TreeBuilder;
 use Symfony\Component\Config\Definition\ConfigurationInterface;
