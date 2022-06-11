@@ -36,6 +36,6 @@ in the `config/bundles.php` file of your project:
 
 return [
     // ...
-    VoyagerBundle::class => ['all' => true],
+    Userator\VoyagerBundle\VoyagerBundle::class => ['all' => true],
 ];
 ```
