@@ -8,6 +8,9 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpKernel\Exception\BadRequestHttpException;
 use Twig\Environment;
+use Twig\Error\LoaderError;
+use Twig\Error\RuntimeError;
+use Twig\Error\SyntaxError;
 
 /**
  * GraphQL Voyager entrypoint.
@@ -35,6 +38,11 @@ final class VoyagerAction
         $this->assetPackage = $assetPackage;
     }
 
+    /**
+     * @throws SyntaxError
+     * @throws RuntimeError
+     * @throws LoaderError
+     */
     public function __invoke(Request $request): Response
     {
         if (!$this->enabled) {
@@ -42,7 +50,7 @@ final class VoyagerAction
         }
 
         return new Response(
-            $this->twig->render('@VoyagerBundle/index.twig', [
+            $this->twig->render('@VoyagerBundle/index.html.twig', [
                 'title' => $this->title,
                 'entrypoint' => $this->entrypoint,
                 'assetPackage' => $this->assetPackage,
