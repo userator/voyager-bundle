@@ -15,10 +15,10 @@ services:
       - '../../../src/DependencyInjection'
 
   userator_voyager.twig:
-    alias: 'router'
+    alias: twig
 
   userator_voyager.router:
-    alias: 'twig'
+    alias: router
 
   userator_voyager.action:
     class: Userator\VoyagerBundle\Action\VoyagerAction
