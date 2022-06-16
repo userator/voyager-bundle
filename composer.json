@@ -33,8 +33,14 @@
         }
     },
     "config": {
-        "platform": {
-            "php": "7.4"
+        "allow-plugins": true,
+        "preferred-install": "dist",
+        "sort-packages": true
+    },
+    "extra": {
+        "symfony": {
+            "allow-contrib": false,
+            "require": "^5.4"
         }
     }
 }
