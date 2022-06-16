@@ -15,7 +15,8 @@
         "symfony/http-kernel": "^5.4",
         "symfony/dependency-injection": "^5.4",
         "symfony/config": "^5.4",
-        "twig/twig": "^3.4"
+        "twig/twig": "^3.4",
+        "symfony/routing": "^5.4"
     },
     "require-dev": {
         "roave/security-advisories": "dev-latest",
@@ -29,6 +30,11 @@
     "autoload-dev": {
         "psr-4": {
             "Userator\\VoyagerBundle\\Tests\\": "tests/"
+        }
+    },
+    "config": {
+        "platform": {
+            "php": "7.4"
         }
     }
 }

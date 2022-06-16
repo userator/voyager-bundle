@@ -14,10 +14,17 @@ services:
     exclude:
       - '../../../src/DependencyInjection'
 
-  Userator\VoyagerBundle\Action\VoyagerAction:
+  userator_voyager.twig:
+    alias: '@router'
+
+  userator_voyager.router:
+    alias: '@twig'
+
+  userator_voyager.action:
+    class: Userator\VoyagerBundle\Action\VoyagerAction
     arguments:
-      - '@twig'
-      - '@router'
+      - '@userator_voyage.twig'
+      - '@userator_voyage.router'
       - '%userator_voyager.enabled%'
       - '%userator_voyager.title%'
       - '%userator_voyager.asset_package%'
