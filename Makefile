@@ -2,10 +2,10 @@ build:
 	docker-compose build --force-rm
 
 start:
-	docker-compose up
+	docker-compose up --remove-orphans
 
 stop:
-	docker-compose down
+	docker-compose down --remove-orphans
 
 status:
 	docker-compose ps
@@ -17,3 +17,6 @@ test:
 
 composer_install:
 	docker-compose run --rm php sh -c "composer install"
+
+composer_update:
+	docker-compose run --rm php sh -c "composer update"
