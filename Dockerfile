@@ -1,5 +1,5 @@
-FROM php:7.4-cli-alpine3.16
-
-COPY --from=composer:2.3 /usr/bin/composer /usr/local/bin/composer
-
-CMD php -v
+FROM php:8.2-cli-alpine3.16
+RUN apk add --no-cache bash
+COPY --from=composer:2.9 /usr/bin/composer /usr/bin/composer
+WORKDIR /app/
+CMD ["sleep", "infinity"]

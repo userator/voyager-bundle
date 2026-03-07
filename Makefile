@@ -13,10 +13,16 @@ status:
 restart: stop start
 
 test:
-	docker-compose run --rm php sh -c "vendor/bin/phpunit ./tests"
+	docker-compose exec -i php /vendor/bin/phpunit
 
 composer_install:
-	docker-compose run --rm php sh -c "composer install"
+	docker-compose exec -i php composer install
 
 composer_update:
-	docker-compose run --rm php sh -c "composer update"
+	docker-compose exec -i php composer update
+
+shell:
+	docker compose exec -i php bash
+
+stan:
+	docker compose exec -i php /app/vendor/bin/phpstan analyze -c /app/phpstan.neon

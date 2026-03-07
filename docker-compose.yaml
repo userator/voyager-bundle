@@ -3,11 +3,7 @@ version: '3.8'
 services:
 
   php:
-    build:
-      context: .
-      dockerfile: ./Dockerfile
-    container_name: php
-    working_dir: /app/
+    build: .
     volumes:
       - ./:/app/
     extra_hosts:

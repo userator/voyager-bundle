@@ -25,12 +25,11 @@ final class VoyagerAction
 
     public function __construct(
         Environment $twig,
-        string      $entrypoint,
-        bool        $enabled = false,
-        string      $title = '',
-        ?string     $assetPackage = null
-    )
-    {
+        string $entrypoint,
+        bool $enabled = false,
+        string $title = '',
+        ?string $assetPackage = null
+    ) {
         $this->twig = $twig;
         $this->entrypoint = $entrypoint;
         $this->enabled = $enabled;
