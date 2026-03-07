@@ -16,9 +16,8 @@ class Configuration implements ConfigurationInterface
         $treeBuilder
             ->getRootNode()
             ->children()
-            ->booleanNode('enabled')->end()
             ->scalarNode('title')->end()
-            ->scalarNode('asset_package')->end()
+            ->scalarNode('endpoint')->end()
             ->end();
 
         return $treeBuilder;

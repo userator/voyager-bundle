@@ -1,7 +1,6 @@
 parameters:
-  userator_voyager.enabled: true
   userator_voyager.title: 'GraphQL Voyager'
-  userator_voyager.asset_package: 'voyager'
+  userator_voyager.endpoint: '/graphql'
 
 services:
   _defaults:
@@ -17,14 +16,9 @@ services:
   userator_voyager.twig:
     alias: twig
 
-  userator_voyager.router:
-    alias: router
-
   userator_voyager.action:
     class: Userator\VoyagerBundle\Action\VoyagerAction
     arguments:
-      - '@userator_voyager.twig'
-      - '@userator_voyager.router'
-      - '%userator_voyager.enabled%'
+      - '@twig'
+      - '%userator_voyager.endpoint%'
       - '%userator_voyager.title%'
-      - '%userator_voyager.asset_package%'

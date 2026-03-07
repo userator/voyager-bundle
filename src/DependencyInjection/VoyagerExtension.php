@@ -13,6 +13,7 @@ use Symfony\Component\DependencyInjection\Loader\YamlFileLoader;
 class VoyagerExtension extends Extension
 {
     /**
+     * @param array<array-key, mixed> $configs
      * @throws Exception
      */
     public function load(array $configs, ContainerBuilder $container): void
@@ -26,5 +27,8 @@ class VoyagerExtension extends Extension
         $configuration = new Configuration();
 
         $config = $this->processConfiguration($configuration, $configs);
+
+        $container->setParameter('userator_voyager.title', $config['title'] ?? 'GraphQL Voyager');
+        $container->setParameter('userator_voyager.endpoint', $config['endpoint'] ?? '/graphql');
     }
 }
