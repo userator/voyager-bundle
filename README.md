@@ -49,14 +49,8 @@ return [
         // ...
     ],
     'voyager' => [
-        'path' => 'vendor/userator/voyager-bundle/public/voyager.min.js',
+        'path' => 'vendor/userator/voyager-bundle/public/voyager.js',
         'entrypoint' => true,
-    ],
-    'react' => [
-        'path' => 'vendor/userator/voyager-bundle/public/react.production.min.js',
-    ],
-    'react-dom' => [
-        'path' => 'vendor/userator/voyager-bundle/public/react-dom.production.min.js',
     ],
 ];
 ```
@@ -67,7 +61,6 @@ return [
 
 | Параметр | Тип | По умолчанию | Описание |
 |----------|-----|--------------|----------|
-| `enabled` | `bool` | `true` | Включить/выключить Voyager |
 | `title` | `string` | `'GraphQL Voyager'` | Заголовок страницы |
 | `endpoint` | `string` | `'/graphql'` | GraphQL endpoint |
 
@@ -78,7 +71,6 @@ return [
 ```yaml
 # config/packages/voyager.yaml
 userator_voyager:
-    enabled: true
     title: 'My GraphQL API'
     endpoint: '/api/graphql'
 ```
@@ -94,5 +86,5 @@ userator_voyager:
 ## Требования
 
 - PHP 8.2+
-- Symfony 6.4+ или 7.0+
+- Symfony 6.4+
 - Twig 3.4+
