@@ -1,4 +1,4 @@
 userator_voyager:
-  path: /graphql/voyager
+  path: /voyager
   methods: GET
   controller: Userator\VoyagerBundle\Controller\VoyagerController

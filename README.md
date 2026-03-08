@@ -48,7 +48,7 @@ return [
     'app' => [
         // ...
     ],
-    'voyager' => [
+    'userator_voyager' => [
         'path' => 'vendor/userator/voyager-bundle/public/voyager.js',
         'entrypoint' => true,
     ],
@@ -61,7 +61,6 @@ return [
 
 | Параметр | Тип | По умолчанию | Описание |
 |----------|-----|--------------|----------|
-| `title` | `string` | `'GraphQL Voyager'` | Заголовок страницы |
 | `endpoint` | `string` | `'/graphql'` | GraphQL endpoint |
 
 ### Примеры конфигурации
@@ -71,8 +70,7 @@ return [
 ```yaml
 # config/packages/voyager.yaml
 userator_voyager:
-    title: 'My GraphQL API'
-    endpoint: '/api/graphql'
+    endpoint: '/graphql'
 ```
 
 ## Маршрут
@@ -80,7 +78,7 @@ userator_voyager:
 По умолчанию Voyager доступен по адресу:
 
 ```
-/graphql/voyager
+/voyager
 ```
 
 ## Требования

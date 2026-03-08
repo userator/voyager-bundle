@@ -12,7 +12,6 @@ final class VoyagerController extends AbstractController
 {
     public function __construct(
         private string $endpoint,
-        private string $title,
     ) {
     }
 
@@ -21,7 +20,6 @@ final class VoyagerController extends AbstractController
         return $this->render(
             'templates/index.html.twig',
             [
-                'title' => $this->title,
                 'endpoint' => $this->endpoint,
             ],
         );

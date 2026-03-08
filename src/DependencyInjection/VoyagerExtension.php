@@ -27,7 +27,6 @@ class VoyagerExtension extends Extension
 
         $config = $this->processConfiguration(new Configuration(), $configs);
 
-        $container->setParameter('userator_voyager.title', $config['title'] ?? 'GraphQL Voyager');
         $container->setParameter('userator_voyager.endpoint', $config['endpoint'] ?? '/graphql');
     }
 }
