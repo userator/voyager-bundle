@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="ru">
+<html lang="{{ app.locale }}">
 <head>
     <style>
         body {
@@ -13,13 +13,13 @@
             height: 100vh;
         }
     </style>
-    <link rel="stylesheet" href="{{ asset('bundles/voyager/public/voyager.css') }}"/>
-    <script src="{{ asset('bundles/voyager/public/voyager.js') }}"></script>
-    <title>{% if title %}{{ title }} - {% endif %}Voyager</title>
+    <link rel="stylesheet" href="{{ asset('public/voyager.css') }}"/>
+    <script src="{{ asset('public/voyager.js') }}"></script>
+    <title>{{ title|trans }}</title>
 </head>
 
 <body>
-<div id="voyager">Loading...</div>
+<div id="voyager">{{ loading|trans }}...</div>
 <script type="module">
     const {voyagerIntrospectionQuery: query} = GraphQLVoyager;
     const response = await fetch(

@@ -20,13 +20,12 @@ class VoyagerExtension extends Extension
     {
         $loader = new YamlFileLoader(
             $container,
-            new FileLocator(__DIR__ . '/../../config')
+            new FileLocator(__DIR__ . '/../../config'),
         );
         $loader->load('services.yaml');
+        $loader->load('routes.yaml');
 
-        $configuration = new Configuration();
-
-        $config = $this->processConfiguration($configuration, $configs);
+        $config = $this->processConfiguration(new Configuration(), $configs);
 
         $container->setParameter('userator_voyager.title', $config['title'] ?? 'GraphQL Voyager');
         $container->setParameter('userator_voyager.endpoint', $config['endpoint'] ?? '/graphql');

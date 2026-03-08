@@ -13,12 +13,31 @@ services:
     exclude:
       - '../../../src/DependencyInjection'
 
-  userator_voyager.twig:
-    alias: twig
+  $services->set('pagerfanta.twig_extension', PagerfantaExtension::class)
+  ->tag('twig.extension')
+  ;
+  
+  $services->set('pagerfanta.twig_runtime', PagerfantaRuntime::class)
+  ->args([
+  abstract_arg('default view'),
+  service('pagerfanta.view_factory'),
+  service('pagerfanta.route_generator_factory'),
+  ])
+  ->tag('twig.runtime')
+  ;
+  
+  $services->set('pagerfanta.undefined_callable_handler', UndefinedCallableHandler::class);
+  
+  $services->set('pagerfanta.view.twig', TwigView::class)
+  ->args([
+  service('twig'),
+  abstract_arg('default Twig template'),
+  ])
+  ->tag('pagerfanta.view', ['alias' => 'twig'])
+  ;
 
-  userator_voyager.action:
-    class: Userator\VoyagerBundle\Action\VoyagerAction
+  userator_voyager.controller:
+    class: Userator\VoyagerBundle\Controller\VoyagerController
     arguments:
-      - '@twig'
       - '%userator_voyager.endpoint%'
       - '%userator_voyager.title%'
