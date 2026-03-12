@@ -37,7 +37,7 @@ $ composer require symfony/asset-mapper
 framework:
     asset_mapper:
         paths:
-            - '%kernel.project_dir%/vendor/userator/voyager-bundle/public'
+            - '%kernel.project_dir%/vendor/userator/voyager-bundle/assets'
 ```
 
 ### 3. Добавьте ассеты Voyager в importmap
@@ -49,7 +49,7 @@ return [
         // ...
     ],
     'userator_voyager' => [
-        'path' => 'vendor/userator/voyager-bundle/public/voyager.js',
+        'path' => 'vendor/userator/voyager-bundle/assets/voyager.js',
         'entrypoint' => true,
     ],
 ];

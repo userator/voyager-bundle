@@ -13,30 +13,12 @@
             height: 100vh;
         }
     </style>
-    <link rel="stylesheet" href="{{ asset('public/voyager.css') }}"/>
-    <script src="{{ asset('public/voyager.js') }}"></script>
+    <link rel="stylesheet" href="{{ asset('assets/voyager.css') }}"/>
+    <script src="{{ asset('assets/voyager.js') }}"></script>
     <title>{{ title|trans }}</title>
 </head>
-
 <body>
 <div id="voyager">{{ loading|trans }}</div>
-<script type="module">
-    const {voyagerIntrospectionQuery: query} = GraphQLVoyager;
-    const response = await fetch(
-            {{ endpoint }},
-            {
-                method: 'post',
-                headers: {
-                    'Accept': 'application/json',
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({query}),
-                credentials: 'omit',
-            },
-    );
-    const introspection = await response.json();
-
-    GraphQLVoyager.renderVoyager(document.getElementById('voyager'), {introspection});
-</script>
+<script type="module" src="{{ asset('assets/app.js') }}" data-endpoint="{{ endpoint }}" data-elemid="voyager"></script>
 </body>
 </html>
