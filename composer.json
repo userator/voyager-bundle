@@ -45,6 +45,9 @@
     "extra": {
         "symfony": {
             "allow-contrib": false,
+            "importmap": {
+                "path": "importmap.php"
+            },
             "require": "^6.4"
         }
     }

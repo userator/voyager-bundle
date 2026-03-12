@@ -20,41 +20,6 @@ return [
 ];
 ```
 
-## Настройка AssetMapper
-
-Bundle использует Symfony AssetMapper для управления ассетами.
-
-### 1. Установите AssetMapper (если ещё не установлен)
-
-```console
-$ composer require symfony/asset-mapper
-```
-
-### 2. Настройте AssetMapper
-
-```yaml
-# config/packages/framework.yaml
-framework:
-    asset_mapper:
-        paths:
-            - '%kernel.project_dir%/vendor/userator/voyager-bundle/assets'
-```
-
-### 3. Добавьте ассеты Voyager в importmap
-
-```php
-// importmap.php
-return [
-    'app' => [
-        // ...
-    ],
-    'userator_voyager' => [
-        'path' => 'vendor/userator/voyager-bundle/assets/voyager.js',
-        'entrypoint' => true,
-    ],
-];
-```
-
 ## Конфигурация
 
 ### Доступные параметры
@@ -68,7 +33,7 @@ return [
 #### YAML
 
 ```yaml
-# config/packages/voyager.yaml
+# config/packages/userator_voyager.yaml
 userator_voyager:
     endpoint: '/graphql'
 ```

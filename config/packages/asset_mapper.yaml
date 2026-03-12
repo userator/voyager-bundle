@@ -1,0 +1,3 @@
+asset_mapper:
+  paths:
+    - '%kernel.project_dir%/vendor/userator/voyager-bundle/assets'
